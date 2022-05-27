@@ -20,13 +20,13 @@ struct IndexSection {
         var demoViewController: UIViewController? {
             switch navigation {
             case .modal(let storyboardName, let identifier):
-                return targetViewController(from: storyboardName, identifier: identifier)
+                return viewController(from: storyboardName, identifier: identifier)
             case .navigationStack(let storyboardName, let identifier):
-                return targetViewController(from: storyboardName, identifier: identifier)
+                return viewController(from: storyboardName, identifier: identifier)
             }
         }
         
-        private func targetViewController(from storyboardName: String, identifier: String?) -> UIViewController? {
+        private func viewController(from storyboardName: String, identifier: String?) -> UIViewController? {
             let storyboard = UIStoryboard.init(name: storyboardName, bundle: nil)
             guard let identifier = identifier else { return storyboard.instantiateInitialViewController() }
             return storyboard.instantiateViewController(withIdentifier: identifier)
@@ -73,6 +73,8 @@ final class IndexViewController: UIViewController {
 
 }
 
+// MARK: Compliance - UITableViewDataSource
+
 extension IndexViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sections[section].items.count
@@ -98,6 +100,8 @@ extension IndexViewController: UITableViewDataSource {
         sections[section].name
     }
 }
+
+// MARK: Compliance - UITableViewDelegate
 
 extension IndexViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
