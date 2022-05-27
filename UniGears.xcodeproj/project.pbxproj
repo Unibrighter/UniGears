@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		4CEB9755283E45E800BBB37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB9754283E45E800BBB37E /* AppDelegate.swift */; };
 		4CEB9757283E45E800BBB37E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB9756283E45E800BBB37E /* SceneDelegate.swift */; };
-		4CEB9759283E45E800BBB37E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB9758283E45E800BBB37E /* ViewController.swift */; };
+		4CEB9759283E45E800BBB37E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB9758283E45E800BBB37E /* IndexViewController.swift */; };
 		4CEB975C283E45E800BBB37E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB975A283E45E800BBB37E /* Main.storyboard */; };
 		4CEB975E283E45EB00BBB37E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB975D283E45EB00BBB37E /* Assets.xcassets */; };
 		4CEB9761283E45EB00BBB37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB975F283E45EB00BBB37E /* LaunchScreen.storyboard */; };
+		4CEB9769284067BE00BBB37E /* AutomationAndManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB9768284067BE00BBB37E /* AutomationAndManagement.storyboard */; };
+		4CEB976D2840685500BBB37E /* DemoParseInfoScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */; };
 		9112EAAB6328E0909197264A /* Pods_UniGears.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356F9677E6166A2A2DC7426D /* Pods_UniGears.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +24,13 @@
 		4CEB9751283E45E800BBB37E /* UniGears.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniGears.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEB9754283E45E800BBB37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEB9756283E45E800BBB37E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CEB9758283E45E800BBB37E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CEB9758283E45E800BBB37E /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		4CEB975B283E45E800BBB37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CEB975D283E45EB00BBB37E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CEB9760283E45EB00BBB37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CEB9762283E45EB00BBB37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEB9768284067BE00BBB37E /* AutomationAndManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AutomationAndManagement.storyboard; sourceTree = "<group>"; };
+		4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoParseInfoScriptViewController.swift; sourceTree = "<group>"; };
 		A3199DB3481EDE7352A28EE1 /* Pods-UniGears.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniGears.release.xcconfig"; path = "Target Support Files/Pods-UniGears/Pods-UniGears.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				0E82882B2C0FD0A50ABC1EEA /* Pods-UniGears.debug.xcconfig */,
 				A3199DB3481EDE7352A28EE1 /* Pods-UniGears.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +76,33 @@
 		4CEB9753283E45E800BBB37E /* UniGears */ = {
 			isa = PBXGroup;
 			children = (
+				4CEB976A284067E600BBB37E /* DemoGroup */,
 				4CEB9754283E45E800BBB37E /* AppDelegate.swift */,
 				4CEB9756283E45E800BBB37E /* SceneDelegate.swift */,
-				4CEB9758283E45E800BBB37E /* ViewController.swift */,
+				4CEB9758283E45E800BBB37E /* IndexViewController.swift */,
 				4CEB975A283E45E800BBB37E /* Main.storyboard */,
 				4CEB975D283E45EB00BBB37E /* Assets.xcassets */,
 				4CEB975F283E45EB00BBB37E /* LaunchScreen.storyboard */,
 				4CEB9762283E45EB00BBB37E /* Info.plist */,
 			);
 			path = UniGears;
+			sourceTree = "<group>";
+		};
+		4CEB976A284067E600BBB37E /* DemoGroup */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB976B2840680400BBB37E /* AutomationAndManagement */,
+			);
+			path = DemoGroup;
+			sourceTree = "<group>";
+		};
+		4CEB976B2840680400BBB37E /* AutomationAndManagement */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB9768284067BE00BBB37E /* AutomationAndManagement.storyboard */,
+				4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */,
+			);
+			path = AutomationAndManagement;
 			sourceTree = "<group>";
 		};
 		B21C529A81EDD63E29465B51 /* Frameworks */ = {
@@ -153,6 +174,7 @@
 			files = (
 				4CEB9761283E45EB00BBB37E /* LaunchScreen.storyboard in Resources */,
 				4CEB975E283E45EB00BBB37E /* Assets.xcassets in Resources */,
+				4CEB9769284067BE00BBB37E /* AutomationAndManagement.storyboard in Resources */,
 				4CEB975C283E45E800BBB37E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,8 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CEB9759283E45E800BBB37E /* ViewController.swift in Sources */,
+				4CEB9759283E45E800BBB37E /* IndexViewController.swift in Sources */,
 				4CEB9755283E45E800BBB37E /* AppDelegate.swift in Sources */,
+				4CEB976D2840685500BBB37E /* DemoParseInfoScriptViewController.swift in Sources */,
 				4CEB9757283E45E800BBB37E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
