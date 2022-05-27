@@ -8,28 +8,21 @@
 import UIKit
 
 struct IndexSection {
+    
     struct IndexItem {
+        
         enum Navigation {
-            case modal(storyboardName: String, identifier: String?)
-            case navigationStack(storyboardName: String, identifier: String?)
+            case navigationStack(storyboardName: String, identifier: String)
         }
         
         let name: String
         let navigation: Navigation
         
-        var demoViewController: UIViewController? {
+        var demoViewController: UIViewController {
             switch navigation {
-            case .modal(let storyboardName, let identifier):
-                return viewController(from: storyboardName, identifier: identifier)
             case .navigationStack(let storyboardName, let identifier):
-                return viewController(from: storyboardName, identifier: identifier)
+                return UIStoryboard.init(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
             }
-        }
-        
-        private func viewController(from storyboardName: String, identifier: String?) -> UIViewController? {
-            let storyboard = UIStoryboard.init(name: storyboardName, bundle: nil)
-            guard let identifier = identifier else { return storyboard.instantiateInitialViewController() }
-            return storyboard.instantiateViewController(withIdentifier: identifier)
         }
     }
     
@@ -86,6 +79,7 @@ extension IndexViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = sections[indexPath.section].items[indexPath.row]
+        // TODO: change this into dequeue pattern
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
         content.text = item.name
@@ -106,13 +100,10 @@ extension IndexViewController: UITableViewDataSource {
 extension IndexViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = sections[indexPath.section].items[indexPath.row]
-        guard let viewController = item.demoViewController else { return }
-        
+
         switch item.navigation {
         case .navigationStack:
-            navigationController?.pushViewController(viewController, animated: true)
-        case .modal:
-            navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(item.demoViewController, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
