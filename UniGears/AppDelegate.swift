@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // NOTE: a new scene is requested to be created if info.plist's ApplicaitonSceneManifest is set
         // The workflow is illustrated in details: https://manasaprema04.medium.com/scene-delegate-vs-appdelegate-86e22dc17fcb
         // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "non", sessionRole: connectingSceneSession.role)
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
