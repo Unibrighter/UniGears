@@ -26,6 +26,13 @@ struct IndexSection {
         }
     }
     
+    static let sections: [IndexSection] = [
+        .init(name: "Automation And Management", items: [
+            .init(name: "Scripts - Parse info outside of project", navigation: .navigationStack(storyboardName: "AutomationAndManagement", identifier: "DemoParseInfoScriptViewController"))
+        ])
+    ]
+    
+    
     let name: String
     let items: [IndexItem]
 }
@@ -52,17 +59,10 @@ final class IndexViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Demo index"
-        loadSections()
+        sections = IndexSection.sections
     }
     
     // MARK: - Helper Functions
-    private func loadSections() {
-        sections = [
-            .init(name: "Automation And Management", items: [
-                .init(name: "Scripts - Parse info outside of project", navigation: .navigationStack(storyboardName: "AutomationAndManagement", identifier: "DemoParseInfoScriptViewController"))
-            ])
-        ]
-    }
 
 }
 
