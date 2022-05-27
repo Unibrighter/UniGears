@@ -45,6 +45,7 @@ final class IndexViewController: UIViewController {
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     
@@ -90,5 +91,25 @@ extension IndexViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // TODO: fix the font styling for the title for the section header, currently the size is too big and text is blocked.
+        sections[section].name
+    }
+}
+
+extension IndexViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = sections[indexPath.section].items[indexPath.row]
+        guard let viewController = item.demoViewController else { return }
+        
+        switch item.navigation {
+        case .navigationStack:
+            navigationController?.pushViewController(viewController, animated: true)
+        case .modal:
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
