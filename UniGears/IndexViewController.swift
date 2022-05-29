@@ -32,7 +32,6 @@ struct IndexSection {
         ])
     ]
     
-    
     let name: String
     let items: [IndexItem]
 }
@@ -52,18 +51,37 @@ final class IndexViewController: UIViewController {
     // MARK: - Properties
     
     private(set) var sections: [IndexSection]!
+    private var searchController: UISearchController! {
+        didSet {
+            searchController.searchResultsUpdater = self
+        }
+    }
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Demo index"
         sections = IndexSection.sections
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for Demo Gear..."
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        
+        navigationItem.title = "Demo index"
+        navigationItem.searchController = searchController
     }
     
     // MARK: - Helper Functions
-
+    
+    private func filter(_ sections: [IndexSection], with searchText: String) -> [IndexSection.IndexItem] {
+        return sections.flatMap {
+            $0.items
+        }.filter{
+            $0.name.lowercased().contains(searchText.lowercased())
+        }.compactMap { $0 }
+    }
 }
 
 // MARK: Compliance - UITableViewDataSource
@@ -106,5 +124,26 @@ extension IndexViewController: UITableViewDelegate {
             navigationController?.pushViewController(item.demoViewController, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: Compliance - UISearchControllerDelegate
+
+extension IndexViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
+        let filteredItems = filter(sections, with: searchText)
+        
+        // TODO: there is a bug to be fixed, sections should be computed variable, otherwise it's going to be overwritten
+        // while user editing it and the original index data would be lost.
+        sections = [.init(name: "Filtered", items: filteredItems)]
+        tableView.reloadData()
+    }
+}
+
+extension IndexViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        sections = IndexSection.sections
+        tableView.reloadData()
     }
 }
