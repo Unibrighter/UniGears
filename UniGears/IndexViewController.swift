@@ -7,36 +7,6 @@
 
 import UIKit
 
-struct IndexSection {
-    
-    struct IndexItem {
-        
-        enum Navigation {
-            case navigationStack(storyboardName: String, identifier: String)
-        }
-        
-        let name: String
-        let navigation: Navigation
-        
-        var demoViewController: UIViewController {
-            switch navigation {
-            case .navigationStack(let storyboardName, let identifier):
-                return UIStoryboard.init(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
-            }
-        }
-    }
-    
-    static let sections: [IndexSection] = [
-        .init(name: "Automation And Management", items: [
-            .init(name: "Scripts - Parse info outside of project", navigation: .navigationStack(storyboardName: "AutomationAndManagement", identifier: "DemoParseInfoScriptViewController"))
-        ])
-    ]
-    
-    let name: String
-    let items: [IndexItem]
-}
-
-
 final class IndexViewController: UIViewController {
 
     // MARK: - IBOutlets
@@ -107,14 +77,8 @@ extension IndexViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = sections[indexPath.section].items[indexPath.row]
-        // TODO: change this into dequeue pattern
-        let cell = UITableViewCell()
-        var content = cell.defaultContentConfiguration()
-        content.text = item.name
-        cell.contentConfiguration = content
-        cell.accessoryType = .disclosureIndicator
-        
-        return cell
+
+        return item.configuredCell(within: tableView)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -15,6 +15,9 @@
 		4CEB9761283E45EB00BBB37E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB975F283E45EB00BBB37E /* LaunchScreen.storyboard */; };
 		4CEB9769284067BE00BBB37E /* AutomationAndManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB9768284067BE00BBB37E /* AutomationAndManagement.storyboard */; };
 		4CEB976D2840685500BBB37E /* DemoParseInfoScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */; };
+		4CF99A1D284446BE00B79F02 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99A1B284446BE00B79F02 /* IndexTableViewCell.swift */; };
+		4CF99A1E284446BE00B79F02 /* IndexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF99A1C284446BE00B79F02 /* IndexTableViewCell.xib */; };
+		4CF99A20284446F000B79F02 /* IndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99A1F284446F000B79F02 /* IndexItem.swift */; };
 		9112EAAB6328E0909197264A /* Pods_UniGears.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356F9677E6166A2A2DC7426D /* Pods_UniGears.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		4CEB9762283E45EB00BBB37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CEB9768284067BE00BBB37E /* AutomationAndManagement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AutomationAndManagement.storyboard; sourceTree = "<group>"; };
 		4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoParseInfoScriptViewController.swift; sourceTree = "<group>"; };
+		4CF99A1B284446BE00B79F02 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
+		4CF99A1C284446BE00B79F02 /* IndexTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexTableViewCell.xib; sourceTree = "<group>"; };
+		4CF99A1F284446F000B79F02 /* IndexItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexItem.swift; sourceTree = "<group>"; };
 		A3199DB3481EDE7352A28EE1 /* Pods-UniGears.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniGears.release.xcconfig"; path = "Target Support Files/Pods-UniGears/Pods-UniGears.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,7 @@
 		4CEB9753283E45E800BBB37E /* UniGears */ = {
 			isa = PBXGroup;
 			children = (
+				4CF99A192844464F00B79F02 /* Common */,
 				4CEB976A284067E600BBB37E /* DemoGroup */,
 				4CEB9754283E45E800BBB37E /* AppDelegate.swift */,
 				4CEB9756283E45E800BBB37E /* SceneDelegate.swift */,
@@ -103,6 +110,32 @@
 				4CEB976C2840685500BBB37E /* DemoParseInfoScriptViewController.swift */,
 			);
 			path = AutomationAndManagement;
+			sourceTree = "<group>";
+		};
+		4CF99A192844464F00B79F02 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4CF99A21284448C100B79F02 /* UtilsAndExtensions */,
+				4CF99A1A2844466C00B79F02 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4CF99A1A2844466C00B79F02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CF99A1B284446BE00B79F02 /* IndexTableViewCell.swift */,
+				4CF99A1C284446BE00B79F02 /* IndexTableViewCell.xib */,
+				4CF99A1F284446F000B79F02 /* IndexItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CF99A21284448C100B79F02 /* UtilsAndExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UtilsAndExtensions;
 			sourceTree = "<group>";
 		};
 		B21C529A81EDD63E29465B51 /* Frameworks */ = {
@@ -172,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF99A1E284446BE00B79F02 /* IndexTableViewCell.xib in Resources */,
 				4CEB9761283E45EB00BBB37E /* LaunchScreen.storyboard in Resources */,
 				4CEB975E283E45EB00BBB37E /* Assets.xcassets in Resources */,
 				4CEB9769284067BE00BBB37E /* AutomationAndManagement.storyboard in Resources */,
@@ -212,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEB9759283E45E800BBB37E /* IndexViewController.swift in Sources */,
+				4CF99A1D284446BE00B79F02 /* IndexTableViewCell.swift in Sources */,
 				4CEB9755283E45E800BBB37E /* AppDelegate.swift in Sources */,
+				4CF99A20284446F000B79F02 /* IndexItem.swift in Sources */,
 				4CEB976D2840685500BBB37E /* DemoParseInfoScriptViewController.swift in Sources */,
 				4CEB9757283E45E800BBB37E /* SceneDelegate.swift in Sources */,
 			);
