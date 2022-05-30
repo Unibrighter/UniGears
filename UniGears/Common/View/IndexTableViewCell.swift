@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IndexTableViewCell: UITableViewCell {
+final class IndexTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,4 +20,14 @@ class IndexTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension IndexTableViewCell: NibedCellModelling {
+
+    func config(with viewModel: IndexSection.IndexItem) {
+        var content = defaultContentConfiguration()
+        content.text = viewModel.name
+        contentConfiguration = content
+        accessoryType = .disclosureIndicator
+    }
 }

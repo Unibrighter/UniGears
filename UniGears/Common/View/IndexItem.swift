@@ -17,16 +17,20 @@ struct IndexSection {
         
         let name: String
         let navigation: Navigation
+        let action: Action?
     }
     
     let name: String
     let items: [IndexItem]
 }
 
-
-extension IndexSection.IndexItem {
+extension IndexSection.IndexItem: CellItemModelling {
     
-    private static let cellIdentifier: String = "IndexTableViewCell"
+    func cell(with tableView: UITableView) -> UITableViewCell {
+        let cell: IndexTableViewCell! = tableView.dequeueItemModelledCell(for: self)
+        cell.config(with: self)
+        return cell
+    }
     
     var demoViewController: UIViewController {
         switch navigation {
@@ -34,25 +38,14 @@ extension IndexSection.IndexItem {
             return UIStoryboard.init(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
         }
     }
-    
-    public func configuredCell(within tableView: UITableView) -> UITableViewCell {
-        if tableView.dequeueReusableCell(withIdentifier: Self.cellIdentifier) == nil {
-            tableView.register(UINib(nibName: Self.cellIdentifier, bundle: nil), forCellReuseIdentifier: Self.cellIdentifier)
-        }
-        
-        let cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: Self.cellIdentifier)
-        var content = cell.defaultContentConfiguration()
-        content.text = self.name
-        cell.contentConfiguration = content
-        cell.accessoryType = .disclosureIndicator
-        return cell
-    }
 }
 
 extension IndexSection {
     static let sections: [IndexSection] = [
         .init(name: "Automation And Management", items: [
-            .init(name: "Scripts - Parse info outside of project", navigation: .navigationStack(storyboardName: "AutomationAndManagement", identifier: "DemoParseInfoScriptViewController"))
+            .init(name: "Scripts - Parse info outside of project",
+                  navigation: .navigationStack(storyboardName: "AutomationAndManagement", identifier: "DemoParseInfoScriptViewController"),
+                  action: nil)
         ])
     ]
 }

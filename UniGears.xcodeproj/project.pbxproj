@@ -18,6 +18,7 @@
 		4CF99A1D284446BE00B79F02 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99A1B284446BE00B79F02 /* IndexTableViewCell.swift */; };
 		4CF99A1E284446BE00B79F02 /* IndexTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF99A1C284446BE00B79F02 /* IndexTableViewCell.xib */; };
 		4CF99A20284446F000B79F02 /* IndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99A1F284446F000B79F02 /* IndexItem.swift */; };
+		4CF99A2328446D3B00B79F02 /* UITableView+DequeuingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF99A2228446D3B00B79F02 /* UITableView+DequeuingViewModel.swift */; };
 		9112EAAB6328E0909197264A /* Pods_UniGears.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356F9677E6166A2A2DC7426D /* Pods_UniGears.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		4CF99A1B284446BE00B79F02 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
 		4CF99A1C284446BE00B79F02 /* IndexTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndexTableViewCell.xib; sourceTree = "<group>"; };
 		4CF99A1F284446F000B79F02 /* IndexItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexItem.swift; sourceTree = "<group>"; };
+		4CF99A2228446D3B00B79F02 /* UITableView+DequeuingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DequeuingViewModel.swift"; sourceTree = "<group>"; };
 		A3199DB3481EDE7352A28EE1 /* Pods-UniGears.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniGears.release.xcconfig"; path = "Target Support Files/Pods-UniGears/Pods-UniGears.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		4CF99A21284448C100B79F02 /* UtilsAndExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				4CF99A2228446D3B00B79F02 /* UITableView+DequeuingViewModel.swift */,
 			);
 			path = UtilsAndExtensions;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				4CEB9759283E45E800BBB37E /* IndexViewController.swift in Sources */,
 				4CF99A1D284446BE00B79F02 /* IndexTableViewCell.swift in Sources */,
 				4CEB9755283E45E800BBB37E /* AppDelegate.swift in Sources */,
+				4CF99A2328446D3B00B79F02 /* UITableView+DequeuingViewModel.swift in Sources */,
 				4CF99A20284446F000B79F02 /* IndexItem.swift in Sources */,
 				4CEB976D2840685500BBB37E /* DemoParseInfoScriptViewController.swift in Sources */,
 				4CEB9757283E45E800BBB37E /* SceneDelegate.swift in Sources */,
