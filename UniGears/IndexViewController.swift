@@ -49,12 +49,23 @@ final class IndexViewController: UIViewController {
     }
     
     // MARK: - Properties
-    
-    private(set) var sections: [IndexSection]!
+
     private var searchController: UISearchController! {
         didSet {
             searchController.searchResultsUpdater = self
         }
+    }
+    
+    private(set) lazy var filteredSections: [IndexSection] = []
+    
+    // MARK: - Computed Variables
+    
+    private var isSearchBarEmpty: Bool {
+      searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private var sections: [IndexSection] {
+        isSearchBarEmpty ? IndexSection.sections : filteredSections
     }
     
     // MARK: - Life Cycle
@@ -62,7 +73,6 @@ final class IndexViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sections = IndexSection.sections
         searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for Demo Gear..."
@@ -132,18 +142,15 @@ extension IndexViewController: UITableViewDelegate {
 extension IndexViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
-        let filteredItems = filter(sections, with: searchText)
+        let filteredItems = filter(IndexSection.sections, with: searchText)
         
-        // TODO: there is a bug to be fixed, sections should be computed variable, otherwise it's going to be overwritten
-        // while user editing it and the original index data would be lost.
-        sections = [.init(name: "Filtered", items: filteredItems)]
+        filteredSections = [.init(name: "Filtered", items: filteredItems)]
         tableView.reloadData()
     }
 }
 
 extension IndexViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        sections = IndexSection.sections
         tableView.reloadData()
     }
 }
