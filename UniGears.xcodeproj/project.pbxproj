@@ -157,6 +157,8 @@
 			buildConfigurationList = 4CEB9765283E45EB00BBB37E /* Build configuration list for PBXNativeTarget "UniGears" */;
 			buildPhases = (
 				B14B90EF0A3B4E01605D8869 /* [CP] Check Pods Manifest.lock */,
+				4CF99A242848D00600B79F02 /* SwiftFormat */,
+				4CF99A252848D00B00B79F02 /* SwiftLint */,
 				4CEB974D283E45E800BBB37E /* Sources */,
 				4CEB974E283E45E800BBB37E /* Frameworks */,
 				4CEB974F283E45E800BBB37E /* Resources */,
@@ -219,6 +221,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4CF99A242848D00600B79F02 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+		};
+		4CF99A252848D00B00B79F02 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		B14B90EF0A3B4E01605D8869 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
