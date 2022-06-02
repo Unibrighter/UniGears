@@ -8,7 +8,6 @@
 import UIKit
 
 final class DemoParseInfoScriptViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }

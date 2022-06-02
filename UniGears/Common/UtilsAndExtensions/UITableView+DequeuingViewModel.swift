@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-typealias Action = (() -> Void)
+typealias Action = () -> Void
 
 protocol CellItemModelling {
     var action: Action? { get }
@@ -33,12 +33,12 @@ protocol NibedCellModelling: Identifiable, NibbedComponentModelling {}
 
 extension NibedCellModelling {
     static var nib: UINib {
-        UINib.init(nibName: self.indetifier, bundle: Bundle.main)
+        UINib(nibName: indetifier, bundle: Bundle.main)
     }
 }
 
 extension UITableView {
-    func dequeueItemModelledCell<CellType: NibedCellModelling>(for item: CellItemModelling) -> CellType {
+    func dequeueItemModelledCell<CellType: NibedCellModelling>(for _: CellItemModelling) -> CellType {
         if dequeueReusableCell(withIdentifier: CellType.indetifier) == nil {
             register(CellType.nib, forCellReuseIdentifier: CellType.indetifier)
         }
