@@ -1,11 +1,11 @@
 ---
-name: Epic
-about: A task large enough that it needs to be divided into smaller tasks. It will usually be labeled as `enhancement`, also know as feature.
+name: Feature
+about: A task large enough that it needs to be divided into smaller tasks. It will usually be labeled as `enhancement`, also know as epic.
 ---
 
 <!-- Issue title should mirror the Epic/Feature Title -->
 
-# Epic Title
+# Feature Title
 
 Feature: Some Task title
 
@@ -15,7 +15,7 @@ This Feature will...
 
 ## List of Tasks (Complete in order) with experience Notes
 
-<!-- The linik below should link to its Epic parent -->
+<!-- The linik below should link to its feature parent -->
 
 - [ ] #1 
  - Defines the section and item nested structures first; Then think about the navigation, which is the function (or the feature you want to apply when selecting on the item), and expand the properties based on that.
