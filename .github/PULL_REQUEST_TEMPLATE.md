@@ -1,9 +1,9 @@
 ## Summary
 
-Give the basica abstraction withe issue number/link here.
+Give the basic abstraction withe issue number/link here.
 
-### (Optiona)Why do we need this?
-- Long descrption of PR
+### (Optional)Why do we need this?
+- Long description of PR
 - Why are we doing this?
 - Any context or related work?
 
@@ -31,10 +31,10 @@ Give the basica abstraction withe issue number/link here.
 ## Contributor Checklist
 
 - Tested on:
- - [ ] Simulator
- - [ ] Device
+    - [ ] Simulator
+    - [ ] Device
 - [ ] No additional warning introduced
-- [ ] Code was formatted <!-- (Build in Xcode or mannually run `Scripts/format.sh`) -->
+- [ ] Code was formatted <!-- (Build in Xcode or manually run `Scripts/format.sh`) -->
 - [ ] Add github labels
 - [ ] Tests
 - [ ] Changes Behind DevSwitch
@@ -49,7 +49,7 @@ Consider decorating your comments: https://conventionalcomments.org/
 - [ ] Appropriate Architectures
 - [ ] Appropriate Tests
 - [ ] Accessibility Inspector audit or no UI impact
-- [ ] Call out any nonobvious regression areas
+- [ ] Call out any non-obvious regression areas
 - [ ] Changes Behind DevSwitch
 
 
