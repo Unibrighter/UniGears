@@ -8,7 +8,6 @@
 import UIKit
 
 final class IndexTableViewCell: UITableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,11 +18,9 @@ final class IndexTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
 
 extension IndexTableViewCell: NibedCellModelling {
-
     func config(with viewModel: IndexSection.IndexItem) {
         var content = defaultContentConfiguration()
         content.text = viewModel.name
